@@ -24,6 +24,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'mvn quarkus:add-extension -Dextensions="container-image-docker"'
+                sh 'mvn clean package -Dquarkus.container-image.build=true'
             }
         }
     }
