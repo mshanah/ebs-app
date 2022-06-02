@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'mvn quarkus:add-extension -Dextensions="container-image-docker"'
-                sh 'mvn clean package -Dquarkus.container-image.build=true -Dquarkus.container-image.group=mshannah -Dquarkus.container-image.name=test'
+                sh 'mvn clean package -Dquarkus.container-image.build=true -Dquarkus.container-image.group=1771985 -Dquarkus.container-image.name=test'
             }
         }
         stage('Login') {
@@ -36,7 +36,7 @@ pipeline {
         stage('Push') {
 
         			steps {
-        				sh 'docker push mshannah/test:1.0-SNAPSHOT'
+        				sh 'docker push 1771985/test:1.0-SNAPSHOT'
         			}
         		}
     }
