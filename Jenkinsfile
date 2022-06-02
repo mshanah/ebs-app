@@ -23,6 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'mvn quarkus:add-extension -Dextensions="container-image-docker"'
             }
         }
     }
